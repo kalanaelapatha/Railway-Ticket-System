@@ -61,7 +61,7 @@ dialogRoutes.route('/add').post(function (req, res) {
 function emailnotification(dialogPayDetails){
 
     var output=`<b>Payment Recived</b>
-                <p>Dear Sir/Madam, We recieved your payment of ${dialogPayDetails.total} LKR. 
+                <p>Dear Sir/Madam, We recieved your payment of ${dialogPayDetails.amount} LKR. 
                 Thank you for using Dialog Payments.</p>`; 
 
 
@@ -70,12 +70,12 @@ function emailnotification(dialogPayDetails){
         port: 465,
         secure: true,
         auth: {
-            user: 'railwayticket0000@gmail.com',
-            pass: 'ams@1996'
+            user: 'railwaysbookingrestapi@gmail.com',
+            pass: 'ds@2restapi'
         }
     });
     let mailOptions = {
-        from: 'railwayTicketBooking@gmail.com <Dialog Payments>',
+        from: 'railwaysbookingrestapi@gmail.com <Dialog Payments>',
         to:dialogPayDetails.email,
         subject: 'Ticket Confirmation',
         html: output
